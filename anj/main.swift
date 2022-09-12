@@ -1,11 +1,5 @@
-//
-//  main.swift
-//  anj
-//
-//  Created by anjella on 12/9/22.
-//
+// COMMENT
 
-import Foundation
-
-print("Hello, World!")
-
+func printSmth(){
+    print("")
+}
