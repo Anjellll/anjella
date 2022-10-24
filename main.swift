@@ -46,8 +46,9 @@ class Teachers {
 
 class DataBase {
     var id: Int = 0
-    var studentsArray: [Students] = []
-    var teachersArray: [Teachers] = []
+//----------------------------------
+    private var studentsArray: [Students] = []
+    private var teachersArray: [Teachers] = []
     
     init(id: Int){
         self.id = id
@@ -72,7 +73,7 @@ class DataBase {
         }
     }
     func deleteTeacher(id: Int) {
-        let teachersArrayLength = studentsArray.count
+        let teachersArrayLength = teachersArray.count
         for teacher in teachersArray {
             if teacher.id == id {
         teachersArray.remove(at: id)
@@ -85,16 +86,28 @@ class DataBase {
     }
     func listOfStudents() {
         print("List of students:")
+        print("----------")
         for (index,item) in studentsArray.enumerated() {
             print("\(item.name) \(item.surname)\nAge: \(item.age)\nForm: \(item.form)\nID: \(item.id)")
+            print("----------")
         }
     }
         func listOfTeachers() {
             print("List of teachers:")
+            print("----------")
             for (index,item) in teachersArray.enumerated() {
                 print("\(item.name) \(item.surname)\nAge: \(item.age)\nID: \(item.id)")
+                print("----------")
             }
         }
+//---------------------------------------
+    func getArrayStudents(){
+        dump(studentsArray)
+    }
+    func getArrayTeachers(){
+        dump(teachersArray)
+    }
+       
 }
 
 
@@ -126,5 +139,8 @@ print("")
 dataBase.deleteTeacher(id: 3)
 dataBase.listOfTeachers()
 
-
+//---------------------------------------
+dataBase.getArrayStudents()
+print("-----")
+dataBase.getArrayTeachers()
 
